@@ -1,13 +1,23 @@
 import $ from 'jquery';
-import {parseCode} from './code-analyzer';
-import {parseAndView} from './parser';
+import {buildGraph} from './cfg-maker';
+import Viz from 'viz.js';
+import { Module, render } from 'viz.js/full.render.js';
 
 $(document).ready(function () {
     $('#codeSubmissionButton').click(() => {
         let codeToParse = $('#codePlaceholder').val();
-        let parsedCode = parseCode(codeToParse);
-        $('#parsedCode').val(JSON.stringify(parsedCode, null, 2));
-        populateTable(parseAndView(parsedCode));
+        let cfgDot = buildGraph(codeToParse);
+
+        let graphElement = document.getElementById('graph');
+        var viz = new Viz({ Module, render });
+        viz.renderSVGElement(cfgDot)
+            .then(function(element) {
+                graphElement.innerHTML = '';
+                graphElement.append(element);
+            });
+        // let parsedCode = parseCode(codeToParse);
+        // $('#parsedCode').val(JSON.stringify(parsedCode, null, 2));
+        // populateTable(parseAndView(parsedCode));
     });
 });
 
