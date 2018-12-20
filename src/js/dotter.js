@@ -11,7 +11,7 @@ function printNodes(nodes, output){
         let label = node.label + '\n' + (i+1);
         output.push(`n${i} [label="${label}"`);
         if (node.color)
-            output.push(' style = filled fillcolor = green');
+            output.push(' style = filled fillcolor = darkolivegreen3');
         let shape = 'box';
         if (node.true || node.false)
             shape = 'diamond';

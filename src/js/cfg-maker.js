@@ -15,6 +15,10 @@ function buildGraph(parsedCode){
     return cfg;
 }
 
+function removeExceptions(cfg){
+    cfg.forEach(node => delete node.exception);
+}
+
 function removeEntryAndExit(nodes){
     let exitNode = nodes[nodes.length - 1];
     let returnNode = exitNode.prev.filter(node => node.astNode.type === 'ReturnStatement')[0];
@@ -24,10 +28,6 @@ function removeEntryAndExit(nodes){
     returnNode.next = [];
     delete returnNode.normal;
     return nodes.slice(1, nodes.length - 1);
-}
-
-function removeExceptions(cfg){
-    cfg.forEach(node => delete node.exception);
 }
 
 function addLabels(cfg){
