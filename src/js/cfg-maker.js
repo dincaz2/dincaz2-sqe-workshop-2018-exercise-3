@@ -12,7 +12,6 @@ function buildGraph(parsedCode){
     cfg = removeEntryAndExit(cfg);
     addLabels(cfg);
     joinNormals(cfg);
-    addColors(cfg, []);
     return cfg;
 }
 
@@ -47,15 +46,6 @@ function joinNormals(cfg){
             i--;
         }
     }
-}
-
-function addColors(cfg, params){
-    let node = cfg[0];
-    while (node.type !== 'exit'){
-        node.color = true;
-        node = node.normal ? node.normal : node.false;
-    }
-    node.color = true;
 }
 
 export {buildGraph};

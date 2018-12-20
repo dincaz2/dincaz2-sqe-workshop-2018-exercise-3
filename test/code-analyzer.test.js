@@ -9,16 +9,7 @@ describe('The javascript parser', () => {
             '  "type": "Program",\n' +
             '  "body": [],\n' +
             '  "sourceType": "script",\n' +
-            '  "loc": {\n' +
-            '    "start": {\n' +
-            '      "line": 0,\n' +
-            '      "column": 0\n' +
-            '    },\n' +
-            '    "end": {\n' +
-            '      "line": 0,\n' +
-            '      "column": 0\n' +
-            '    }\n' +
-            '  }\n' +
+            '  "range": [0,0]\n' +
             '}'))
         );
     });
@@ -37,68 +28,23 @@ describe('The javascript parser', () => {
                 '          "id": {\n' +
                 '            "type": "Identifier",\n' +
                 '            "name": "a",\n' +
-                '            "loc": {\n' +
-                '              "start": {\n' +
-                '                "line": 1,\n' +
-                '                "column": 4\n' +
-                '              },\n' +
-                '              "end": {\n' +
-                '                "line": 1,\n' +
-                '                "column": 5\n' +
-                '              }\n' +
-                '            }\n' +
+                '            "range": [4,5]\n' +
                 '          },\n' +
                 '          "init": {\n' +
                 '            "type": "Literal",\n' +
                 '            "value": 1,\n' +
                 '            "raw": "1",\n' +
-                '            "loc": {\n' +
-                '              "start": {\n' +
-                '                "line": 1,\n' +
-                '                "column": 8\n' +
-                '              },\n' +
-                '              "end": {\n' +
-                '                "line": 1,\n' +
-                '                "column": 9\n' +
-                '              }\n' +
-                '            }\n' +
+                '            "range": [8,9]\n' +
                 '          },\n' +
-                '          "loc": {\n' +
-                '            "start": {\n' +
-                '              "line": 1,\n' +
-                '              "column": 4\n' +
-                '            },\n' +
-                '            "end": {\n' +
-                '              "line": 1,\n' +
-                '              "column": 9\n' +
-                '            }\n' +
-                '          }\n' +
+                '          "range": [4,9]\n' +
                 '        }\n' +
                 '      ],\n' +
                 '      "kind": "let",\n' +
-                '      "loc": {\n' +
-                '        "start": {\n' +
-                '          "line": 1,\n' +
-                '          "column": 0\n' +
-                '        },\n' +
-                '        "end": {\n' +
-                '          "line": 1,\n' +
-                '          "column": 10\n' +
-                '        }\n' +
-                '      }\n' +
+                '      "range": [0,10]\n' +
                 '    }\n' +
                 '  ],\n' +
                 '  "sourceType": "script",\n' +
-                '  "loc": {\n' +
-                '    "start": {\n' +
-                '      "line": 1,\n' +
-                '      "column": 0\n' +
-                '    },\n' +
-                '    "end": {\n' +
-                '      "line": 1,\n' +
-                '      "column": 10\n' +
-                '    }\n' +
-                '  }\n' +
+                '  "range": [0,10]\n' +
                 '}'))
         );
     });
