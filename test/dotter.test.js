@@ -14,7 +14,7 @@ describe('The dotter', () => {
         colorPath(cfg, parsedCode, params);
         let actual = dot(cfg);
         let expected = 'digraph cfg { ' +
-            'n0 [label="return 1;\n1" style = filled fillcolor = darkolivegreen3 shape="box"]\n }';
+            'n0 [label="return 1;" xlabel=1 style = filled fillcolor = darkolivegreen3 shape="box"]\n }';
         assert.equal(actual, expected);
     });
 
@@ -35,11 +35,11 @@ describe('The dotter', () => {
         colorPath(cfg, parsedCode, params);
         let actual = dot(cfg);
         let expected = 'digraph cfg { ' +
-            'n0 [label="let a = true;\n1" style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
-            'n1 [label="x > 1\n2" style = filled fillcolor = darkolivegreen3 shape="diamond"]\n' +
-            'n2 [label="x = 1\na = false\n3" style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
-            'n3 [label="return a;\n4" style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
-            'n4 [label="x = 0\n5" shape="box"]\n' +
+            'n0 [label="let a = true;" xlabel=1 style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
+            'n1 [label="x > 1" xlabel=2 style = filled fillcolor = darkolivegreen3 shape="diamond"]\n' +
+            'n2 [label="x = 1\na = false" xlabel=3 style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
+            'n3 [label="return a;" xlabel=4 style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
+            'n4 [label="x = 0" xlabel=5 shape="box"]\n' +
             'n0 -> n1 []\n' +
             'n1 -> n2 [label="T"]\n' +
             'n1 -> n4 [label="F"]\n' +
@@ -70,13 +70,13 @@ describe('The dotter', () => {
         colorPath(cfg, parsedCode, params);
         let actual = dot(cfg);
         let expected = 'digraph cfg { ' +
-            'n0 [label="let a = true;\n1" style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
-            'n1 [label="global == 1\n2" style = filled fillcolor = darkolivegreen3 shape="diamond"]\n' +
-            'n2 [label="x = 1\na = false\n3" style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
-            'n3 [label="x == 1\n4" style = filled fillcolor = darkolivegreen3 shape="diamond"]\n' +
-            'n4 [label="global = 2\n5" style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
-            'n5 [label="global = 0\n6" shape="box"]\n' +
-            'n6 [label="return a;\n7" style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
+            'n0 [label="let a = true;" xlabel=1 style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
+            'n1 [label="global == 1" xlabel=2 style = filled fillcolor = darkolivegreen3 shape="diamond"]\n' +
+            'n2 [label="x = 1\na = false" xlabel=3 style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
+            'n3 [label="x == 1" xlabel=4 style = filled fillcolor = darkolivegreen3 shape="diamond"]\n' +
+            'n4 [label="global = 2" xlabel=5 style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
+            'n5 [label="global = 0" xlabel=6 shape="box"]\n' +
+            'n6 [label="return a;" xlabel=7 style = filled fillcolor = darkolivegreen3 shape="box"]\n' +
             'n0 -> n1 []\n' +
             'n1 -> n2 [label="T"]\n' +
             'n1 -> n6 [label="F"]\n' +

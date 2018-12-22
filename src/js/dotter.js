@@ -8,8 +8,7 @@ function dot(nodes) {
 
 function printNodes(nodes, output){
     for (const [i, node] of nodes.entries()) {
-        let label = node.label + '\n' + (i+1);
-        output.push(`n${i} [label="${label}"`);
+        output.push(`n${i} [label="${node.label}" xlabel=${i+1}`);
         if (node.color)
             output.push(' style = filled fillcolor = darkolivegreen3');
         let shape = 'box';
