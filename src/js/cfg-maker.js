@@ -37,7 +37,7 @@ function addLabels(cfg){
 function joinNormals(cfg){
     for (var i=0; i<cfg.length; i++){
         let node = cfg[i];
-        if (node.normal && node.normal.normal){
+        if (node.normal && node.normal.normal && node.normal.prev.length === 1){
             let next = node.normal;
             node.next = next.next;
             node.normal = next.normal;

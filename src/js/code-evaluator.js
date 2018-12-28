@@ -16,12 +16,12 @@ const handlers = {
     'ArrayExpression': arrayExpression,
 };
 
-function evalExp(exp, params, coloredLines) {
-    return handlers[exp.type](exp, params, coloredLines);
+function evalExp(exp, params) {
+    return handlers[exp.type](exp, params);
 }
 
-function block(exp, params, coloredLines) {
-    exp.body.forEach(e => evalExp(e, params, coloredLines));
+function block(exp, params) {
+    exp.body.forEach(e => evalExp(e, params));
 }
 
 function assignmentExpression(exp, params) {
@@ -38,8 +38,8 @@ function assignmentExpression(exp, params) {
     return true;
 }
 
-function expressionStatement(exp, params, coloredLines) {
-    return evalExp(exp.expression, params, coloredLines);
+function expressionStatement(exp, params) {
+    return evalExp(exp.expression, params);
 }
 
 function functionDeclaration(exp, params) {
