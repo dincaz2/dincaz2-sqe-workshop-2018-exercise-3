@@ -122,7 +122,6 @@ function extractFunctionParams(paramString) {
             i = res[1];
         } else
             params[index++] = paramStringArr[i];
-        params[index-1] = eval(params[index-1]);
     }
     return params;
 }
