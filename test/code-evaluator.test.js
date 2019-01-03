@@ -46,9 +46,9 @@ describe('The nodes colorer', () => {
             'function foo(x){\n' +
             '   let a = true;\n' +
             '   while (global == 1){\n' +
-            '       x = 1;\n' +
+            '       x = -1;\n' +
             '       a = false;\n' +
-            '       if (x == 1)\n' +
+            '       if (x == -1)\n' +
             '           global = 2;\n' +
             '       else\n' +
             '           global = 0\n;' +

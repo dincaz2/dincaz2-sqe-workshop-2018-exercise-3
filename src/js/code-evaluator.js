@@ -10,6 +10,7 @@ const handlers = {
 
     'BinaryExpression': binaryExpression,
     'LogicalExpression': binaryExpression,
+    'UnaryExpression': unaryExpression,
     'Identifier': identifier,
     'Literal': literal,
     'MemberExpression': memberExpression,
@@ -55,6 +56,11 @@ function binaryExpression(exp, params) {
     let left = evalExp(exp.left, params);
     let right = evalExp(exp.right, params);
     return eval(left + exp.operator + right);
+}
+
+function unaryExpression(exp, params) {
+    let arg = evalExp(exp.argument, params);
+    return eval(exp.operator + arg);
 }
 
 function identifier(exp, params) {
@@ -116,6 +122,7 @@ function extractFunctionParams(paramString) {
             i = res[1];
         } else
             params[index++] = paramStringArr[i];
+        params[index-1] = eval(params[index-1]);
     }
     return params;
 }
